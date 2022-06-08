@@ -80,20 +80,20 @@ const MainFeed = () => {
                     </div>
                     <div className='my-friends'>
                         <div className='title txt-bold'>나의팔로워</div>
-                        <ul className='friend'>
-                            <li>
+                        <ul className='friends'>
+                            <li className='friend'>
                                 <div className='profile-image'></div>
                                 <div className='nickname'>미니마우스</div>
                             </li>
-                            <li>
+                            <li className='friend'>
                                 <div className='profile-image'></div>
                                 <div className='nickname'>미키마우스</div>
                             </li>
-                            <li>
+                            <li className='friend'>
                                 <div className='profile-image'></div>
                                 <div className='nickname'>도날드덕</div>
                             </li>
-                            <li>
+                            <li className='friend'>
                                 <div className='profile-image'></div>
                                 <div className='nickname'>구피</div>
                             </li>
