@@ -3,6 +3,7 @@ import './css/index.css';
 import userData from './userData.json';
 import feedData from './feedData.json';
 import TxtFeed from '../TxtFeed';
+import ImgFeed from '../ImgFeed';
 
 const MainFeed = () => {
     const dbFeeds = feedData;
@@ -34,39 +35,13 @@ const MainFeed = () => {
                     {
                          dbFeeds.map((feed)=>{
                              return (
-                                <TxtFeed email={feed.email} body={feed.body} name={feed.name} key={feed.id} />
+                                !(feed.thumbnailUrl)?<TxtFeed email={feed.email} body={feed.body} name={feed.name} key={feed.id} />:
+                                <ImgFeed email={feed.email} body={feed.body} name={feed.name} key={feed.id} img={feed.thumbnailUrl} />
                                 
                              )
                          })
                     }
-                    
-                    <div className='feed'>
-                            <div className='top'>
-                                <div className='profile-image'></div>
-                                <div className='profile-desc'>
-                                    <div className='nickname txt-bold'>길동 홍</div>
-                                    <div className='timestamp'>08:15 pm ,yesterday </div>
-                                </div>
-                            </div>{/* top */}
-                            <div className='contents'>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi fuga ratione magni repudiandae modi aut, deleniti soluta, maiores neque dolorum quidem non optio cumque quibusdam autem incidunt amet illo quia doloremque dignissimos voluptatum ab ipsam vero nostrum. Neque, voluptatibus harum dolore ex dolores aut rem nobis. Totam architecto quo molestias!
-                                    <div className='image'></div>
-                            </div>{/* contents */}
-                            <div className='bottom'>
-                                <div className='like'>
-                                    <div className='asset'>
-                                        <img src="/assets/feed/like-dac.svg" alt="좋아요" />
-                                    </div>
-                                    <div className='count txt-bold'> 25k </div>
-                                </div>
-                                <div className='comment'>
-                                    <div className='asset'>
-                                        <img src="/assets/feed/comment.svg" alt="댓글" />
-                                    </div>
-                                    <div className='count txt-bold'>25k</div>
-                                </div>
-                           </div>{/* bottom */}
-                    </div>{/* feed-img :end */}
+             
                  </div>
                 {/* feed-list */}
               <div className='friend-list'>
